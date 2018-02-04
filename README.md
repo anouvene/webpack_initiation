@@ -22,7 +22,7 @@ npm run dev : qui lance votre environnement de développement sans HMR ni serveu
 npm run prod : qui lance votre environnement de production sans HMR ni serveur et avec minification<br>
 
 Rappel dépôt avec Github :<br>
-——————————————————————————————————-------------------------
+——————————————————————————————————-------------------------<br>
 echo "# taskRunnerWithWebpack" >> README.md<br>
 git init<br>
 git add README.md<br>
