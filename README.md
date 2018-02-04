@@ -1,36 +1,36 @@
-webpack with phpstorm
+webpack with phpstorm<br>
 
-Set Javascript version to ECMAScript 6
-——————————————————————————————————------------------
-Settings (Preferences) | Languages & Frameworks | Javascript | Javascript language version
+Set Javascript version to ECMAScript 6<br>
+——————————————————————————————————------------------<br>
+Settings (Preferences) | Languages & Frameworks | Javascript | Javascript language version<br>
 
-Fixe  “Unresolved function or method” for “require”
-——————————————————————————————————------------------
+Fixe  “Unresolved function or method” for “require”<br>
+——————————————————————————————————------------------<br>
 
-Make sure that Node.js Core library is enabled in :
-=> Settings (Preferences) | Languages & Frameworks | Node.js and NPM
+Make sure that Node.js Core library is enabled in :<br>
+=> Settings (Preferences) | Languages & Frameworks | Node.js and NPM<br>
 
 
-Lancer webpack dans le terminal et voir les modification :
+Lancer webpack dans le terminal et voir les modification :<br>
+——————————————————————————————————-------------------------<br>
+=> npm run watch<br>
+
+Vous avez désormais 3 moyens de lancer Webpack :<br>
+——————————————————————————————————-------------------------<br>
+npm run start : qui démarre votre serveur, le HMR et qui ne minifie aucun fichier<br>
+npm run dev : qui lance votre environnement de développement sans HMR ni serveur et minification<br>
+npm run prod : qui lance votre environnement de production sans HMR ni serveur et avec minification<br>
+
+Rappel dépôt avec Github :<br>
 ——————————————————————————————————-------------------------
-=> npm run watch
+echo "# taskRunnerWithWebpack" >> README.md<br>
+git init<br>
+git add README.md<br>
+git commit -m "first commit"<br>
+git remote add origin https://github.com/anouvene/taskRunnerWithWebpack.git<br>
+git push -u origin master<br>
 
-Vous avez désormais 3 moyens de lancer Webpack :
-——————————————————————————————————-------------------------
-npm run start : qui démarre votre serveur, le HMR et qui ne minifie aucun fichier
-npm run dev : qui lance votre environnement de développement sans HMR ni serveur et minification
-npm run prod : qui lance votre environnement de production sans HMR ni serveur et avec minification
-
-Rappel dépôt avec Github :
-——————————————————————————————————-------------------------
-echo "# taskRunnerWithWebpack" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/anouvene/taskRunnerWithWebpack.git
-git push -u origin master
-
-Ou bien :
-——————————————————————————————————-------------------------
-git remote add origin https://github.com/anouvene/taskRunnerWithWebpack.git
-git push -u origin master
+Ou bien :<br>
+——————————————————————————————————-------------------------<br>
+git remote add origin https://github.com/anouvene/taskRunnerWithWebpack.git<br>
+git push -u origin master<br>
