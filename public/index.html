@@ -1,15 +1,55 @@
 <!doctype html>
 <html lang="fr">
+    <!--
+    Classes navigateurs IE : permet d'éviter d'utiliser les hacks syntaxiques.
+    Ex. avec le hashLayout:
+        .ie6 .ma_classe,
+        .ie7 .maclass {
+            position: relative;
+            zoom: 1;
+        }
+
+    Class .no-js : pratique pour varier la présentation du contenu selon que l'utilisateur active ou non javaScript
+    Cette class .no-js est transformée en js par Modernizr.js
+    -->
+
+    <!--[if lte IE 7]> <html class="ie6 no-js" lang="fr"> <![endif]-->
+    <!--[if IE 7]> <html class="ie7 no-js" lang="fr"> <![endif]-->
+    <!--[if IE 8]> <html class="ie8 no-js" lang="fr"> <![endif]-->
+    <!--[if IE 9]> <html class="ie9 no-js" lang="fr"> <![endif]-->
+    <!--[if gt IE 9]><!--> <html class="no-js" lang="fr"> <!--<![endif]-->
     <head>
+        <!--
+        On force le moteur de rendu de IE au plus récent
+        Important: cette meta doit être placée en premiere + en-tête HTTP si possible
+        car certains proxies bloquent cette méthode
+        -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--
+        <meta charset='' > :
+        Important : pour des raisons de sécurité, garder cette meta tjs avant <title>
+        -->
         <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Test webpack</title>
-        <link href="styles.css" rel="stylesheet">
+
+        <!--
+        Une seule feuille de styles minifiés, sans @import dedans
+        -->
+        <link href="print.css" media="print" rel="stylesheet">
+
+        <!--
+        la css pour l'impression
+        -->
+        <link href="styles.css" media="screen, projection" rel="stylesheet">
         <script src="bundle.js"></script>
+
     </head>
     <body>
-        <h1 class="titre">Webpack</h1>
+        <header>Webpack</header>
+        <h1 class="titre"></h1>
+        <footer>&copy;Copyright 2018 - Tous droits réservés</footer>
     </body>
 </html>

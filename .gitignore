@@ -1,0 +1,4 @@
+node_modules
+.idea
+public/appcache
+public/__offline_serviceworker
