@@ -1,5 +1,12 @@
+/* -----------------
+  INCLURE UN FICHIER
+-------------------- */
+@import 'header';
+@import 'footer';
+
 $body-color: blue;
 
 body {
   color: $body-color;
+  background-color: cadetblue;
 }
