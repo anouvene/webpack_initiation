@@ -31,6 +31,12 @@ module.exports = {
     new HtmlWebpackPlugin({  // Also generate a test.html
       filename: 'cv.html',
       template: 'src/cv.html'
+    }),
+    new Webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default']
     })
   ],
   resolve: {
