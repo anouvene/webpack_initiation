@@ -1,7 +1,9 @@
+const Webpack = require('webpack');
 const Path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
   entry: {
@@ -23,7 +25,12 @@ module.exports = {
       { from: Path.resolve(__dirname, '../public'), to: 'public' }
     ]),
     new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html')
+      filename: 'index.html',
+      template: 'src/index.html'
+    }), // Generates default index.html
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: 'cv.html',
+      template: 'src/cv.html'
     })
   ],
   resolve: {
