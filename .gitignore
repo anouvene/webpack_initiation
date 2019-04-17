@@ -2,3 +2,7 @@ node_modules
 .idea
 public/appcache
 public/__offline_serviceworker
+
+npm-debug.log
+package-lock.json
+public/sw.js
