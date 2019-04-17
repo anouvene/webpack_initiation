@@ -1,0 +1,18 @@
+/* -----------------
+  Bootstrap
+-------------------- */
+@import "~bootstrap/scss/bootstrap";
+
+/* -----------------
+  INCLURE UN FICHIER
+-------------------- */
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+$body-color: $body-color;
+
+body {
+  color: $body-font;
+  background-color: $light;
+}
