@@ -10,9 +10,33 @@
 @import 'header';
 @import 'footer';
 
+@import 'cartouche';
+@import 'principal';
+
 $body-color: $body-color;
 
+html, body {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding:0;
+}
+
 body {
+  min-height: 100%;
   color: $body-font;
   background-color: $light;
+}
+
+main {
+  height: 100%;
+  padding-top: 56px; 
+}
+
+main > section:nth-child(1) {
+  height: 100%;
+}
+.p-content  {
+  border-bottom: solid 1px grey;
 }

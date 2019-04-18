@@ -1,0 +1,11 @@
+
+.cartouche {
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    background-color: aquamarine;
+    margin: 0;
+    padding: 2em;
+    vertical-align: top;
+    float: left; /*hack positionnement inline-block*/
+}
