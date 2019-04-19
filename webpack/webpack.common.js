@@ -32,6 +32,14 @@ module.exports = {
       filename: 'cv.html',
       template: 'src/cv.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'formulaire.html',
+      template: 'src/formulaire.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'test.html',
+      template: 'src/test.html'
+    }),
     new Webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -48,7 +56,7 @@ module.exports = {
     rules: [
       {
         test: /\.mjs$/,
-        include: /node_modules/,
+        exclude: /node_modules/,
         type: 'javascript/auto'
       },
       {

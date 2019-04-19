@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+    
+
+
+    <script>
+        var a = 12.6;
+        var b = () => {
+            return 'Hey !';
+        }
+        var somme = (x, y) => {
+            return x + y;
+        }
+        function operation(a,b,f) {
+            return f(a,b);
+        }
+
+        console.log(operation(10, 20, (x, y) => x - y )); // -10
+        console.log(operation(10, 20, somme)); // 30
+
+        //=================================================
+         // Objets en JSON
+        //==================================================
+        function Point(a, b) {
+          this.x = a;
+          this.y = b;
+
+          // Méthode
+          this.affiche = () => {
+              console.log(this.x + ", " + this.y);
+          }
+        }
+
+        var p1 = new Point(5, -10);
+        console.log(p1);
+        p1.affiche();
+
+
+        
+
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>

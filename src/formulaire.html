@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="titre">Test formulaire</h1>
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <label for="poids">Poids</label>
+                <input type="text" class="form-control" id="poids" placeholder="Poids">
+            </div>
+
+            <div class="form-group">
+                <label for="poidsmin">Poids mini</label>
+                <input type="text" class="form-control" id="poidsmin" placeholder="Poids mini">
+            </div>
+
+            <div class="form-group">
+                <label for="poidsmax">Poids maxi</label>
+                <input type="text" class="form-control" id="poidsmax" placeholder="Poids maxi">
+            </div>
+
+            <div class="form-group">
+                <label for="taille">Taille</label>
+                <input type="text" class="form-control" id="taille" placeholder="Taille">
+            </div>
+            
+            <div class="form-group">
+                <label for="sexe">Taille</label>
+                <select name="sexe" id="sexe" class="form-control">
+                    <option value="1">Homme</option>
+                    <option value="2">Femme</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="icm">ICM</label>
+                <textarea class="form-control" id="icm" rows="3"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="traitement()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function Personne(adresse, poids, taille, sexe) {
+            this.email = adresse;
+            this.weight = poids;
+            this.height = taille;
+            this.sex = sexe;
+
+            // ICM
+            this.icm = function() { return this.weight / (this.height*this.height); } 
+
+            // Poids mini
+            this.poidsMin = function(t){ return 19*t*t };
+
+            // Poids maxi
+            this.poidsMax = function(t){ return 25*t*t; }
+
+            // Diagnostique
+            this.diagnostic = function() {
+                var resultat = "";
+                var imc = this.icm();
+                console.log('ICM : ', imc);
+
+                if(imc < 17) {
+                    resultat = "Anorexique";
+                } else if( imc < 19) {
+                    resultat = "maigre";
+                } else if( imc < 35) {
+                    resultat = "Super forme";
+                } else if( imc < 30) {
+                    resultat = "Kilos +";
+                } else if( imc < 40) {
+                    resultat = "Obèse léger";
+                } else {
+                    resultat = "Obèse";
+                }
+
+                return resultat;
+            }
+
+        }
+
+          
+
+
+        // Personne 1
+        function traitement(){
+            var adresse = document.getElementById('email').value;
+            var poids = document.getElementById('poids').value;
+            var taille = document.getElementById('taille').value;
+            var sexe = document.getElementById('sexe').value;
+
+            var p1 = new Personne(adresse, poids, taille, sexe);
+            
+
+            var poidsMin = p1.poidsMin(taille);
+            var poidsMax = p1.poidsMax(taille);
+
+
+            document.getElementById('poidsmin').value = poidsMin;
+            document.getElementById('poidsmax').value = poidsMax;
+
+            document.getElementById('icm').innerHTML = p1.diagnostic();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

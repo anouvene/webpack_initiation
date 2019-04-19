@@ -1,4 +1,6 @@
 import 'bootstrap';
 import '../styles/index.scss';
+import { afficher } from './fonctions';
 
-console.log('webpack starterkit');
+//require('./fonctions.js');
+//afficher();
